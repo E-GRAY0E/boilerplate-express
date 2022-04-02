@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
 
-console.log("Hello World");
+app.get("https://boilerplate-exprezz.herokuapp.com/",
+    function(req, res) {
+    res.send('Hello Express');
+});
+
 
 
 
