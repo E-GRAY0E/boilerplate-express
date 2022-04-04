@@ -12,13 +12,13 @@ app.use(express.static(__dirname + "/public"));
 app.use("/public", express.static(__dirname + "/public"));
 
 
-    app.get('/json', (req, res)=>{
-        var jsonResponse = { "message": "Hello json"};
+    app.get('/json', function(req, res){
+        var jsonResponse = { "message": "Hello json" };
         
         if(process.env.MESSAGE_STYLE === 'uppercase'){
-            jsonResponse.message = jsonResponse.message.toUpperCase();
-        } else {
-            res.json(jsonResponse);
+            return jsonResponse.message = jsonResponse.message.toUpperCase();
+        }
+            return res.json(jsonResponse);
         });
 
 
