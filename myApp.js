@@ -1,4 +1,5 @@
 var express = require('express');
+const { request, response } = require('express')
 var app = express();
 var bGround = require('fcc-express-bground');
 require('dotenv').config()
@@ -10,12 +11,12 @@ app.get("/",
 //Serving static assets
 app.use(express.static(__dirname + "/public"));
 //Serving JSON on a specific route:
-let message = { message: "Hello json"};
+let message = { message: "Hello json" };
 app.get("/json", (req, res) => {
   if(process.env.MESSAGE_STYLE === 'uppercase') {
-    res.json({"message": "HELLO JSON"})
+    response.json({"message": "HELLO JSON"})
   }else{
-    res.json(message)
+    response.json(message)
   }});
 
 
