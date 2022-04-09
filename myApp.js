@@ -46,7 +46,7 @@ app.get('/name', (req, res) => {
 app.use(bodyParser.urlencoded({extended: false}));
 app.post('/name', (req, res) => {
   let contact = req.body.first + " " + req.body.last;
-  res.json( {contact} );
+  res.json( {name: contact} );
 });
 
 
